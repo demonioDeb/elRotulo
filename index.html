@@ -101,7 +101,8 @@
     width:100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cg fill='none' stroke='%231F3A5F' stroke-width='1.4' opacity='0.5'%3E%3Cpath d='M26 4 L48 26 L26 48 L4 26 Z'/%3E%3Ccircle cx='26' cy='26' r='9'/%3E%3C/g%3E%3Cg fill='%23DE9F22' opacity='0.85'%3E%3Ccircle cx='26' cy='26' r='3.4'/%3E%3C/g%3E%3C/svg%3E");
     background-size:26px 26px;
-    background-repeat:repeat;
+    background-repeat:repeat-x;
+    background-position:center;
     animation:tile-drift 40s linear infinite;
   }
   .tile-strip.reverse{transform:scaleY(-1);animation:tile-drift 40s linear infinite reverse;}
@@ -148,10 +149,6 @@
   }
   .btn-whatsapp:hover{background:#22bd5b;}
   .btn-whatsapp:active{box-shadow:0 1px 0 #1a9e4c;}
-  .btn-ghost{
-    background:transparent;border-color:var(--anil);color:var(--anil);
-  }
-  .btn-ghost:hover{background:var(--anil);color:var(--cal);}
   .btn-sm{padding:10px 18px;font-size:14px;}
 
   .nav-toggle{display:none;background:none;border:none;padding:6px;}
@@ -182,12 +179,6 @@
     font-family:'Fraunces',serif;font-weight:500;font-style:italic;
     font-size:19px;color:var(--terracota);margin-bottom:14px;
   }
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:flex-start;}
-  .hero-note{
-    margin:16px 0 0;font-size:14px;color:var(--tinta-suave);
-    display:flex;align-items:center;gap:8px;justify-content:flex-start;
-  }
-  .hero-note svg{width:16px;height:16px;flex:none;}
 
   /* Chat mockup - celular realista, tema WhatsApp sutil */
   .phone{
@@ -397,6 +388,16 @@
   .pain-card p{color:var(--tinta-suave);font-size:15px;}
 
   /* Servicios - bloque único */
+  .servicios-intro{
+    max-width:600px;margin:0 auto 28px;text-align:center;
+    font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--anil);
+  }
+  .servicios-cierre{
+    margin-top:32px;padding-top:28px;text-align:center;
+    border-top:1px solid rgba(31,58,95,0.14);
+    font-size:15.5px;color:var(--tinta-suave);
+  }
+  .servicios-cierre strong{color:var(--anil);font-weight:600;}
   .negocios-ilustracion{
     max-width:900px;margin:0 auto 32px;
   }
@@ -426,22 +427,15 @@
     display:flex;align-items:center;justify-content:center;margin:0 0 16px;
   }
   .bloque-icon svg{width:19px;height:19px;color:var(--anil);}
+  .bloque-titulo{
+    display:block;font-family:'Fraunces',serif;font-weight:700;font-size:15px;
+    color:var(--terracota);margin-bottom:8px;letter-spacing:.01em;
+  }
   .servicio-bloque h4{
     font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--anil);
     margin-bottom:10px;line-height:1.32;
   }
   .servicio-bloque p{font-size:14.5px;color:var(--tinta-suave);}
-  .bloque-ideal{
-    margin-top:12px;font-size:13px;color:var(--tinta-suave);
-    padding-top:12px;border-top:1px dashed rgba(31,58,95,0.18);
-  }
-  .bloque-ideal strong{color:var(--terracota);font-weight:700;}
-  .servicio-cta{
-    display:flex;justify-content:center;
-    margin-top:34px;padding-top:30px;
-    border-top:1px solid rgba(31,58,95,0.14);
-  }
-
   /* Proceso */
   .proceso-track{
     display:grid;grid-template-columns:repeat(3,1fr);gap:0;
@@ -527,48 +521,6 @@
   }
   .faq-a p{padding:0 22px 20px;color:var(--tinta-suave);font-size:15px;max-width:64ch;}
 
-  /* Contacto */
-  .contacto-grid{
-    display:grid;grid-template-columns:0.9fr 1.1fr;gap:44px;
-  }
-  .contacto-info{text-align:left;}
-  .contacto-info h2{font-size:clamp(26px,3.4vw,34px);margin-bottom:14px;}
-  .contacto-info p{color:var(--tinta-suave);margin:0 0 22px;max-width:44ch;}
-  .contacto-nota{
-    font-style:italic;font-weight:600;color:var(--terracota);
-    font-size:14.5px;margin:-10px 0 22px;max-width:44ch;
-  }
-  .contacto-detail{
-    display:flex;align-items:center;gap:12px;margin:0 0 14px;font-weight:600;color:var(--anil);
-  }
-  .contacto-detail svg{width:20px;height:20px;color:var(--terracota);flex:none;}
-
-  .form-card{
-    background:var(--blanco);
-    border-radius:var(--radius);
-    padding:30px;
-    box-shadow:var(--shadow-card);
-    border:1px solid rgba(31,58,95,0.08);
-  }
-  .field{margin-bottom:18px;}
-  .field label{
-    display:block;font-size:13.5px;font-weight:700;color:var(--anil);
-    margin-bottom:7px;letter-spacing:.01em;
-  }
-  .field input, .field select, .field textarea{
-    width:100%;padding:12px 14px;
-    border:1.5px solid rgba(31,58,95,0.2);
-    border-radius:10px;
-    font-family:inherit;font-size:15px;color:var(--tinta);
-    background:var(--cal);
-    transition:border-color .2s;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    outline:none;border-color:var(--terracota);
-  }
-  .field textarea{resize:vertical;min-height:90px;}
-  .form-note{font-size:13px;color:var(--tinta-suave);margin-top:12px;}
-
   /* Iniciar plática */
   .platica-sub{margin-top:12px;}
   .platica-opciones{
@@ -645,15 +597,12 @@
     .hero .phone-wrap{max-width:300px;margin:0 auto;}
     .hero-copy{text-align:center;}
     .hero-copy .lead{margin-left:auto;margin-right:auto;}
-    .hero-ctas{justify-content:center;}
-    .hero-note{justify-content:center;}
     .pain-grid{grid-template-columns:1fr 1fr;}
-    .servicio-bloques{grid-template-columns:1fr;gap:26px;}
-    .servicio-bloque{border-left:none;padding:0;border-top:1px solid rgba(31,58,95,0.14);padding-top:22px;}
+    .servicio-bloques{grid-template-columns:1fr;gap:32px;}
+    .servicio-bloque{border-left:none;padding:0;border-top:2px solid rgba(31,58,95,0.16);padding-top:28px;}
     .servicio-bloque:first-child{border-top:none;padding-top:0;}
     .beneficios{grid-template-columns:1fr;}
     .transparencia{grid-template-columns:1fr;}
-    .contacto-grid{grid-template-columns:1fr;}
   }
   @media (max-width:768px){
     .nav-links{
@@ -683,16 +632,12 @@
     .pain-card,
     .servicio-bloque,
     .paso,
-    .contacto-info,
     .transparencia h2,
     .transparencia p,
     .transparencia > div:first-child{text-align:center;}
     .bloque-icon{margin-left:auto;margin-right:auto;}
     .beneficio{flex-direction:column;align-items:center;text-align:center;}
     .transparencia-list{align-items:center;}
-    .contacto-info p,
-    .contacto-nota{margin-left:auto;margin-right:auto;}
-    .contacto-detail{justify-content:center;}
     .faq-q{text-align:left;}
   }
   @media (max-width:560px){
@@ -708,14 +653,14 @@
 
 <header>
   <div class="nav wrap">
-    <div class="brand">
+    <a href="#inicio" class="brand" aria-label="Ir al inicio">
       <svg class="brand-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M5 3v3M5 6h6a2 2 0 0 1 2 2" stroke="var(--cal)" stroke-width="1.7" stroke-linecap="round"/>
         <rect x="8" y="8" width="12" height="9" rx="1.5" fill="var(--mostaza)" stroke="var(--cal)" stroke-width="1.7"/>
         <path d="M11 12.5h6M11 14.5h4" stroke="var(--anil-2)" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
       El Rótulo
-    </div>
+    </a>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
@@ -725,8 +670,7 @@
       <a href="#proceso">📋 Cómo funciona</a>
       <a href="#beneficios">🎯 Beneficios</a>
       <a href="#faq">❓ Preguntas</a>
-      <a href="#contacto">📩 Contacto</a>
-      <a href="#platica" class="btn btn-whatsapp btn-sm">Empezar</a>
+      <a href="#platica">📩 Contacto</a>
     </nav>
   </div>
 </header>
@@ -740,17 +684,6 @@
         <h1>Tu negocio trabaja. <em>Tu página</em> también debería hacerlo.</h1>
         <p class="hero-sub">Deja de contestar lo mismo cien veces por WhatsApp.</p>
         <p class="lead">Creo un lugar en internet donde tus clientes encuentran horarios, precios y ubicación sin tener que preguntarte todo por WhatsApp. Tú sigues trabajando y la información sigue disponible.</p>
-        <div class="hero-ctas">
-          <a href="#platica" class="btn btn-whatsapp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.71-.85-1.98-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.2 3.01c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.71-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.56-.35z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.63 1.44 5.2L2 22l4.94-1.42A9.96 9.96 0 0012.02 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.63 0-3.22-.44-4.6-1.27l-.33-.2-2.93.84.85-2.86-.21-.34a8.18 8.18 0 01-1.28-4.37c0-4.53 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.14 8.14 0 012.4 5.8c.01 4.53-3.67 8.2-8.2 8.2z"/></svg>
-            Cuéntame de tu negocio
-          </a>
-          <a href="#servicios" class="btn btn-ghost">Ver cómo funciona</a>
-        </div>
-        <div class="hero-note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          Mérida, Yucatán · Atención por WhatsApp
-        </div>
       </div>
 
       <div class="phone-wrap">
@@ -844,7 +777,7 @@
         </button>
       </div>
 
-      <p class="historia-cierre">Si a mí me funcionó, estoy seguro de que también puede ayudar a otros negocios pequeños.</p>
+      <p class="historia-cierre">Si a mí me funcionó, estoy seguro de que también puede ayudarte a ti.</p>
     </div>
   </section>
 
@@ -887,38 +820,52 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Servicios</span>
-        <h2>🧩 Un lugar en internet, hecho a la medida de lo que necesitas.</h2>
-        <p>No vendo paquetes cerrados. Platicamos qué necesita tu negocio y armamos justo eso, sin piezas de más.</p>
+        <h2>🧩 Una sola página, con todo lo que tu negocio necesita.</h2>
+        <p>No vendo paquetes cerrados ni cosas de más. Toda página incluye lo mismo, porque es justo lo que un negocio pequeño necesita para dejar de contestar lo mismo todos los días.</p>
       </div>
 
       <div class="negocios-ilustracion reveal">
         <img src="negocios.png" alt="Distintos negocios de Mérida —taquería, estética, papelería, taller y cafetería— cada uno con su página web mostrada en un celular" loading="lazy" width="1100" height="613">
       </div>
 
+      <p class="servicios-intro reveal">Esto es lo que incluye tu página:</p>
+
       <div class="servicio-unico reveal">
         <div class="servicio-bloques">
           <div class="servicio-bloque">
             <div class="bloque-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-            <h4>¿Solo necesitas que sepan quién eres, dónde estás y cómo contactarte?</h4>
-            <p>Horarios, ubicación, botón directo a tu WhatsApp y todo lo básico, bien puesto y fácil de encontrar.</p>
-            <p class="bloque-ideal"><strong>Ideal para:</strong> talleres, carpinterías, carwash, salones de eventos, ferreterías, papelerías</p>
+            <span class="bloque-titulo">📍 Tu presencia</span>
+            <h4>Que sepan quién eres, dónde estás y cuándo abres</h4>
+            <p>Horarios, ubicación y todo lo básico de tu negocio, bien puesto y fácil de encontrar. Un lugar propio en internet que se ve serio y da confianza.</p>
           </div>
           <div class="servicio-bloque">
             <div class="bloque-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
-            <h4>¿Vendes productos y quieres mostrarlos con fotos y precios?</h4>
-            <p>Un catálogo claro, organizado por categorías, con pedidos que llegan directo a tu WhatsApp.</p>
-            <p class="bloque-ideal"><strong>Ideal para:</strong> cocina económica, antojitos, comida por encargo, reposterías, tiendas de ropa, artesanías</p>
+            <span class="bloque-titulo">🛍️ Tu catálogo</span>
+            <h4>Un catálogo sencillo de tus productos o servicios</h4>
+            <p>Lo que vendes o lo que ofreces, con fotos y precios, organizado y claro. Así tus clientes ya llegan sabiendo qué quieren y cuánto cuesta.</p>
           </div>
           <div class="servicio-bloque">
             <div class="bloque-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4V4z"/></svg></div>
-            <h4>¿Necesitas que te dejen sus datos para agendar o cotizar?</h4>
-            <p>Un formulario sencillo para citas o cotizaciones, más las preguntas frecuentes que te evitan explicar lo mismo cada vez.</p>
-            <p class="bloque-ideal"><strong>Ideal para:</strong> clínicas, estéticas, consultorios, asesorías, fotógrafos, terapeutas</p>
+            <span class="bloque-titulo">💬 Tu medio de contacto</span>
+            <h4>Que te encuentren y te escriban sin complicaciones</h4>
+            <p>Botón directo a tu WhatsApp y las preguntas frecuentes ya resueltas, para que solo te escriban cuando de verdad haga falta.</p>
           </div>
         </div>
-        <div class="servicio-cta">
-          <a href="#platica" class="btn btn-whatsapp">Cuéntame qué necesitas</a>
+
+        <p class="servicios-cierre">Esta combinación funciona igual para una <strong>taquería</strong>, una <strong>estética</strong>, un <strong>taller</strong>, una <strong>carpintería</strong>, un <strong>carwash</strong>, una <strong>repostería</strong>, una <strong>clínica</strong>, una <strong>papelería</strong> o un <strong>salón de eventos</strong>. Cambia el contenido, no la idea.</p>
+      </div>
+
+      <div class="transparencia reveal">
+        <div>
+          <span class="eyebrow" style="color:var(--mostaza)">Sin sorpresas</span>
+          <h2>🔍 Un precio claro, dicho desde el principio.</h2>
+          <p>Antes de empezar sabes exactamente qué vas a pagar. Nada de "costos extra" que aparecen después, ni letras chiquitas. Y si más adelante tu negocio crece, eso también puede crecer contigo, cuando tú decidas.</p>
         </div>
+        <ul class="transparencia-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Un solo pago, acordado antes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Sin mensualidades escondidas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Se puede ampliar más adelante</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -982,27 +929,6 @@
     </div>
   </section>
 
-
-  <div class="tile-strip reverse"></div>
-
-  <!-- TRANSPARENCIA -->
-  <section>
-    <div class="wrap">
-      <div class="transparencia reveal">
-        <div>
-          <span class="eyebrow" style="color:var(--mostaza)">Sin sorpresas</span>
-          <h2>🔍 Un precio claro, dicho desde el principio.</h2>
-          <p>Antes de empezar sabes exactamente qué vas a pagar. Nada de "costos extra" que aparecen después, ni letras chiquitas. Y si más adelante tu negocio crece, eso también puede crecer contigo, cuando tú decidas.</p>
-        </div>
-        <ul class="transparencia-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Un solo pago, acordado antes</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Sin mensualidades escondidas</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Se puede ampliar más adelante</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <div class="tile-strip"></div>
 
   <!-- FAQ -->
@@ -1037,68 +963,6 @@
     </div>
   </section>
 
-
-  <div class="tile-strip reverse"></div>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="wrap">
-      <div class="contacto-grid">
-        <div class="contacto-info reveal">
-          <span class="eyebrow">Contacto</span>
-          <h2>📩 Platiquemos de tu negocio</h2>
-          <p>Cuéntame un poco de lo que haces y qué te gustaría resolver. Te contesto yo mismo, sin robots ni respuestas automáticas.</p>
-          <p class="contacto-nota">Esta misma idea es la que hoy uso en mis propios negocios.</p>
-          <div class="contacto-detail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.47 14.38c-.29-.15-1.71-.85-1.98-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6"/><circle cx="12" cy="12" r="9"/></svg>
-            99 91 55 82 06
-          </div>
-          <div class="contacto-detail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            Mérida, Yucatán
-          </div>
-          <a href="#platica" class="btn btn-whatsapp" style="margin-top:10px;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.71-.85-1.98-.94-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.2 3.01c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.71-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.56-.35z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.63 1.44 5.2L2 22l4.94-1.42A9.96 9.96 0 0012.02 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.63 0-3.22-.44-4.6-1.27l-.33-.2-2.93.84.85-2.86-.21-.34a8.18 8.18 0 01-1.28-4.37c0-4.53 3.68-8.2 8.2-8.2 2.19 0 4.25.86 5.8 2.4a8.14 8.14 0 012.4 5.8c.01 4.53-3.67 8.2-8.2 8.2z"/></svg>
-            Empezar la plática
-          </a>
-        </div>
-
-        <div class="form-card reveal">
-          <form id="contactForm">
-            <div class="field">
-              <label for="nombre">Tu nombre</label>
-              <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
-            </div>
-            <div class="field">
-              <label for="negocio">Nombre de tu negocio</label>
-              <input type="text" id="negocio" name="negocio" placeholder="Ej. Cochinita Doña Fili">
-            </div>
-            <div class="field">
-              <label for="tipo">¿Cómo funciona tu negocio?</label>
-              <select id="tipo" name="tipo">
-                <option value="">Elige una opción</option>
-                <option>Vendo productos</option>
-                <option>Ofrezco un servicio</option>
-                <option>Atiendo citas o consultas</option>
-                <option>Organizo eventos o espacios</option>
-                <option>Enseño o doy asesorías</option>
-                <option>Otro</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="mensaje">Cuéntame qué necesitas</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Por ejemplo: quiero un lugar donde vean mi menú y mis horarios..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;">
-              Continuar
-            </button>
-            <p class="form-note">Con esto ya me haces una idea de tu negocio. En el siguiente paso eliges cómo prefieres que te ayudemos. No guardo nada, solo platicamos.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div class="tile-strip reverse"></div>
 
   <!-- INICIAR PLÁTICA -->
@@ -1106,24 +970,24 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Aquí empieza la plática</span>
-        <h2>💬 No importa cómo prefieras que te ayudemos.</h2>
-        <p>No importa si prefieres que vayamos a tu negocio o hacerlo todo por WhatsApp. Lo importante es entender lo que haces para crear una página que de verdad trabaje por ti.</p>
-        <p class="platica-sub">Somos un equipo pequeño y queremos ayudarte de la forma que te resulte más cómoda. Elige la opción que mejor se adapte a ti.</p>
+        <h2>💬 Platiquemos de tu negocio</h2>
+        <p>No importa si prefieres que vaya a tu negocio o hacerlo todo por WhatsApp. Lo importante es entender lo que haces para crear una página que de verdad trabaje por ti.</p>
+        <p class="platica-sub">Quiero ayudarte de la forma que te resulte más cómoda. Elige la opción que mejor se adapte a ti.</p>
       </div>
 
       <div class="platica-opciones reveal">
         <div class="platica-card">
           <div class="platica-icon">🏪</div>
           <h3>Prefiero una visita a mi negocio</h3>
-          <p>Mauricio puede visitarte personalmente para conocer tu negocio, entender lo que haces y ayudarte a definir el contenido de tu página. Es ideal si prefieres platicar cara a cara.</p>
-          <a href="https://wa.me/5659736929?text=Hola.%20Me%20interesa%20tener%20una%20p%C3%A1gina%20web%20para%20mi%20negocio.%20Me%20gustar%C3%ADa%20que%20Mauricio%20me%20visitara%20para%20platicar%20sobre%20mi%20proyecto." target="_blank" rel="noopener" class="btn btn-whatsapp">Hablar con Mauricio</a>
+          <p>Puedo visitarte personalmente para conocer tu negocio, entender lo que haces y ayudarte a definir el contenido de tu página. Es ideal si prefieres platicar cara a cara.</p>
+          <a href="https://wa.me/5659736929?text=Hola.%20Me%20interesa%20tener%20una%20p%C3%A1gina%20web%20para%20mi%20negocio.%20Me%20gustar%C3%ADa%20una%20visita%20a%20mi%20negocio%20para%20platicar%20sobre%20mi%20proyecto." target="_blank" rel="noopener" class="btn btn-whatsapp">Quiero atención con visita a mi negocio</a>
         </div>
 
         <div class="platica-card">
           <div class="platica-icon">💬</div>
           <h3>Prefiero atención por WhatsApp</h3>
-          <p>Sulemi puede ayudarte completamente en línea. Te hará unas preguntas, revisará la información de tu negocio y te acompañará durante todo el proceso, sin que tengas que salir de tu negocio.</p>
-          <a href="https://wa.me/5659736929?text=Hola.%20Me%20interesa%20tener%20una%20p%C3%A1gina%20web%20para%20mi%20negocio.%20Me%20gustar%C3%ADa%20que%20Sulemi%20me%20atendiera%20por%20WhatsApp." target="_blank" rel="noopener" class="btn btn-whatsapp">Hablar con Sulemi</a>
+          <p>Puedo ayudarte completamente en línea. Te haré unas preguntas, revisaré la información de tu negocio y te acompañaré durante todo el proceso, sin que tengas que salir de tu negocio.</p>
+          <a href="https://wa.me/5659736929?text=Hola.%20Me%20interesa%20tener%20una%20p%C3%A1gina%20web%20para%20mi%20negocio.%20Me%20gustar%C3%ADa%20que%20me%20atendieran%20por%20WhatsApp." target="_blank" rel="noopener" class="btn btn-whatsapp">Quiero atención por WhatsApp</a>
         </div>
       </div>
 
@@ -1147,8 +1011,9 @@
         <a href="#historia">🌱 Mi historia</a>
         <a href="#servicios">🧩 Servicios</a>
         <a href="#proceso">📋 Cómo funciona</a>
+        <a href="#beneficios">🎯 Beneficios</a>
         <a href="#faq">❓ Preguntas</a>
-        <a href="#contacto">📩 Contacto</a>
+        <a href="#platica">📩 Contacto</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1369,16 +1234,6 @@
   } else {
     revealEls.forEach(el => el.classList.add('visible'));
   }
-
-  // Formulario -> WhatsApp
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // El formulario ya sirvió para que la persona ordene sus ideas.
-    // Ahora la llevamos a elegir cómo prefiere que la ayudemos.
-    const platica = document.getElementById('platica');
-    if (platica) platica.scrollIntoView({ behavior: 'smooth' });
-  });
 </script>
 
 </body>

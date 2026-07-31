@@ -55,6 +55,18 @@ Mantén el archivo `el-rotulo-og.png` en la misma carpeta que `index.html`.
 
 Si cambiaste algo y la vista previa vieja sigue apareciendo, usa el depurador de Facebook y presiona "Scrape Again" para refrescar el caché.
 
+## Archivos del proyecto
+
+- `index.html` — la página principal.
+- `negocios.png` — ilustración de la sección de servicios.
+- `el-rotulo-og.png` — imagen de vista previa al compartir en redes.
+- `404.html` — página de error con la identidad de la marca (GitHub Pages la muestra sola cuando alguien entra a una URL que no existe).
+- `robots.txt` — permite que Google indexe el sitio.
+- `sitemap.xml` — mapa del sitio para buscadores.
+- `.nojekyll` — indica a GitHub Pages que no procese el sitio con Jekyll.
+
+Sube **todos** estos archivos juntos al repositorio, en la misma carpeta.
+
 ## Cómo publicarlo con GitHub Pages
 
 1. Sube este repositorio a GitHub (ver pasos abajo).

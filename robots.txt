@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://demoniodeb.github.io/elRotulo/sitemap.xml
